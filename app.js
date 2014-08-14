@@ -10,7 +10,6 @@ var mongo = require('mongoskin');
 var db = mongo.db("mongodb://localhost:27017/mean-template-3", {native_parser:true});
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 
 var app = express();
 
@@ -31,7 +30,6 @@ app.use(function(req,res,next){
     next();
 });
 app.use('/', routes);
-app.use('/users', users);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
